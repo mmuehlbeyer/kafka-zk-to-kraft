@@ -1,0 +1,46 @@
+services:
+  controller01:
+    image: confluentinc/cp-kafka:7.9.2
+    hostname: controller01
+    container_name: controller01
+    environment:
+      CLUSTER_ID: "BACUEAnrS8O3qk8bBJPaBw"
+      KAFKA_NODE_ID: 100
+      KAFKA_PROCESS_ROLES: controller
+      KAFKA_LISTENERS: CONTROLLER://:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 100@controller01:9093,200@controller02:9093,300@controller03:9093
+      KAFKA_JMX_PORT: 9997
+      # KAFKA_ZOOKEEPER_METADATA_MIGRATION_ENABLE: true
+      # KAFKA_ZOOKEEPER_CONNECT: zookeeper01:2181, zookeeper02:2181,zookeeper03:2181
+  controller02:
+    image: confluentinc/cp-kafka:7.9.2
+    hostname: controller02
+    container_name: controller02
+    environment:
+      CLUSTER_ID: "BACUEAnrS8O3qk8bBJPaBw"
+      KAFKA_NODE_ID: 200
+      KAFKA_PROCESS_ROLES: controller
+      KAFKA_LISTENERS: CONTROLLER://:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 100@controller01:9093,200@controller02:9093,300@controller03:9093
+      KAFKA_JMX_PORT: 9997
+      # KAFKA_ZOOKEEPER_METADATA_MIGRATION_ENABLE: true
+      # KAFKA_ZOOKEEPER_CONNECT: zookeeper01:2181, zookeeper02:2181,zookeeper03:2181
+  controller03:
+    image: confluentinc/cp-kafka:7.9.2
+    hostname: controller03
+    container_name: controller03
+    environment:
+      CLUSTER_ID: "BACUEAnrS8O3qk8bBJPaBw"
+      KAFKA_NODE_ID: 300
+      KAFKA_PROCESS_ROLES: controller
+      KAFKA_LISTENERS: CONTROLLER://:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 100@controller01:9093,200@controller02:9093,300@controller03:9093
+      KAFKA_JMX_PORT: 9997
+      # KAFKA_ZOOKEEPER_METADATA_MIGRATION_ENABLE: true
+      # KAFKA_ZOOKEEPER_CONNECT: zookeeper01:2181, zookeeper02:2181,zookeeper03:2181
