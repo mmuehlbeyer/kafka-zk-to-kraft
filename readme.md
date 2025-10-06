@@ -19,7 +19,7 @@ The setup is made of the following
 we start with a "classical" setup, 3 Zookeeper nodes and 3 Brokers
 we will then perform the migration step by step while adapting the configs and restarting the brokers.
 
-the steps are taken from the official confluent documentation here
+the steps are taken from the confluent documentation here
 https://docs.confluent.io/platform/7.9/installation/migrate-zk-kraft.html
 
 
@@ -146,14 +146,14 @@ there are some template files available in templates [subdirectory](./subdirecto
 
 ```yml
       #KAFKA_ZOOKEEPER_CONNECT: zookeeper01:2181,zookeeper02:2181,zookeeper03:2181
-	  #KAFKA_KRAFT_MODE: "false"
+      #KAFKA_KRAFT_MODE: "false"
 ```
 
 remove/comment the following in kafka-extend.yml
 
 ```yml
-	  #KAFKA_ZOOKEEPER_METADATA_MIGRATION_ENABLE: true
-	  #KAFKA_INTER_BROKER_PROTOCOL_VERSION: 3.9
+      #KAFKA_ZOOKEEPER_METADATA_MIGRATION_ENABLE: true
+      #KAFKA_INTER_BROKER_PROTOCOL_VERSION: 3.9
 ```
 add/uncomment the following in kafka-extend.yml
 
