@@ -142,7 +142,7 @@ if everything is running fine and the migration has been successuful we can cont
 therefore we need to make some adoptions to our configs:
 
 remove/comment the following in broker.yml
-there are some template files available in templates [subdirectory](./subdirectory) (final files after finishing migration) 
+there are some template files available in  [templates](./templates) (final files after finishing migration) 
 
 ```yml
       #KAFKA_ZOOKEEPER_CONNECT: zookeeper01:2181,zookeeper02:2181,zookeeper03:2181
